@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Score Recorder System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap logo-icon"></i>
+                    <div class="logo-text">
+                        <h1 class="logo-title">ExamScore</h1>
+                        <span class="logo-subtitle">Pro</span>
+                    </div>
+                </div>
+                <p>Track and manage student exam scores efficiently</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalStudents">0</div>
+                        <div>Total Students</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="avgScore">0</div>
+                        <div>Average Score</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="highestScore">-</div>
+                        <div>Highest Score</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="passRate">0%</div>
+                        <div>Pass Rate</div>
+                    </div>
+                </div>
+
+                <form id="scoreForm">
+                    <div class="form-group">
+                        <label for="studentName">Student Name *</label>
+                        <input type="text" id="studentName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studentId">Student ID</label>
+                        <input type="text" id="studentId">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" required>
+                            <option value="">Select Subject</option>
+                            <option value="MATHEMATICS">MATHEMATICS</option>
+                            <option value="SCIENCE">SCIENCE</option>
+                            <option value="RESEARCH">RESEARCH</option>
+                            <option value="ENTREP">ENTREP</option>
+                            <option value="PEH">PEH</option>
+                            <option value="Web">WEB</option>
+                            <option value="Java">JAVA</option>
+                            <option value="GRIND ML">GRIND ML</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="score">Score (0-100) *</label>
+                        <input type="number" id="score" min="0" max="100" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">➕ Add Record</button>
+                    <button type="button" id="clearAll" class="btn btn-danger">🗑️ Clear All Records</button>
+                </form>
+            </div>
+
+            <div class="records-section">
+                <h2>📋 Recent Records</h2>
+                <div id="recordsContainer">
+                    <div class="no-records">
+                        No records yet. Add your first student score!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
